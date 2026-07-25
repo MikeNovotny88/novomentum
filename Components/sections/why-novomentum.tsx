@@ -1,49 +1,43 @@
-import {
-  Shield,
-  BrainCircuit,
-  TrendingUp,
-} from "lucide-react";
+import { BrainCircuit, Shield, TrendingUp } from "lucide-react";
+import SectionTitle from "@/components/shared/section-title";
 
 const features = [
   {
     icon: BrainCircuit,
     title: "Practical AI",
     description:
-      "We implement AI that solves real business problems and delivers measurable results.",
+      "We implement AI solutions that solve real business problems, automate repetitive work, and improve productivity across your organization.",
   },
   {
     icon: TrendingUp,
     title: "Business First",
     description:
-      "Technology should move your business forward—not become another system to manage.",
+      "Technology should accelerate growth. Every recommendation we make is focused on measurable business outcomes and long-term success.",
   },
   {
     icon: Shield,
     title: "Trusted Technology",
     description:
-      "Built on Microsoft 365, Azure, OpenAI, and secure cloud platforms.",
+      "Built on Microsoft 365, Azure, OpenAI, and enterprise-grade cloud platforms designed for reliability and security.",
   },
 ];
 
 export default function WhyNovomentum() {
   return (
-    <section id="why" className="py-32">
+    <section
+      id="why"
+      className="py-32"
+    >
       <div className="mx-auto max-w-7xl px-6">
 
-        <p className="text-center text-sm uppercase tracking-[0.35em] text-cyan-400">
-          Why Novomentum
-        </p>
+        <SectionTitle
+          eyebrow="Why Novomentum"
+          title="Technology with purpose."
+          description="Every recommendation is designed to increase efficiency, reduce manual work, and help your business move forward."
+        />
 
-        <h2 className="mt-4 text-center text-5xl font-bold">
-          Technology with purpose.
-        </h2>
+        <div className="grid gap-8 md:grid-cols-3">
 
-        <p className="mx-auto mt-6 max-w-3xl text-center text-lg text-slate-400">
-          Every recommendation is designed to increase efficiency,
-          reduce manual work, and help your business grow.
-        </p>
-
-        <div className="mt-20 grid gap-8 md:grid-cols-3">
           {features.map((feature) => {
             const Icon = feature.icon;
 
@@ -52,7 +46,9 @@ export default function WhyNovomentum() {
                 key={feature.title}
                 className="card p-10"
               >
-                <Icon className="mb-8 h-10 w-10 text-cyan-400" />
+                <div className="mb-8 inline-flex rounded-2xl bg-cyan-400/10 p-4">
+                  <Icon className="h-8 w-8 text-cyan-400" />
+                </div>
 
                 <h3 className="text-2xl font-bold">
                   {feature.title}
@@ -64,6 +60,7 @@ export default function WhyNovomentum() {
               </div>
             );
           })}
+
         </div>
 
       </div>

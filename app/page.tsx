@@ -1,3 +1,4 @@
+import Stats from "@/components/sections/stats";
 import Navbar from "@/components/layout/navbar";
 import Hero from "@/components/hero/hero";
 import TrustedTech from "@/components/sections/trusted-tech";
@@ -12,6 +13,7 @@ export default function Home() {
       <MouseGlow />
       <Navbar />
       <Hero />
+      <Stats />
       <TrustedTech />
       <BusinessGoals />
       <WhyNovomentum />

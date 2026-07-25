@@ -1,28 +1,36 @@
-export default function TrustedTech() {
-  const tech = [
-    "Microsoft 365",
-    "Azure",
-    "Copilot",
-    "OpenAI",
-    "HubSpot",
-    "Salesforce",
-  ];
+import SectionTitle from "@/components/shared/section-title";
 
+const technologies = [
+  "Microsoft 365",
+  "Azure",
+  "Microsoft Copilot",
+  "OpenAI",
+  "HubSpot",
+  "Salesforce",
+  "Power Platform",
+  "SharePoint",
+  "Teams",
+  "Cloudflare",
+];
+
+export default function TrustedTech() {
   return (
-    <section className="py-24">
+    <section className="py-32">
       <div className="mx-auto max-w-7xl px-6">
 
-        <p className="mb-8 text-center text-sm uppercase tracking-[0.35em] text-cyan-400">
-          Trusted Technologies
-        </p>
+        <SectionTitle
+          eyebrow="Technology"
+          title="Powered by the platforms you already trust."
+          description="We build modern AI, automation, and business solutions using industry-leading technologies."
+        />
 
-        <div className="flex flex-wrap justify-center gap-4">
-          {tech.map((item) => (
+        <div className="flex flex-wrap justify-center gap-5">
+          {technologies.map((tech) => (
             <div
-              key={item}
-              className="rounded-full border border-white/10 bg-white/5 px-6 py-3 text-slate-300 transition hover:border-cyan-400 hover:text-white"
+              key={tech}
+              className="rounded-full border border-white/10 bg-white/5 px-6 py-3 text-lg text-slate-300 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:bg-cyan-400/10 hover:text-white"
             >
-              {item}
+              {tech}
             </div>
           ))}
         </div>

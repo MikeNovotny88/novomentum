@@ -18,10 +18,10 @@ export default function Navbar() {
           <Image
             src="/logot.png"
             alt="Novomentum"
-            width={210}
+            width={250}
             height={60}
             priority
-            className="h-12 w-auto"
+            className="h-16 w-auto"
           />
         </a>
 
