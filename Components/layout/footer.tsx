@@ -1,23 +1,22 @@
+import Image from "next/image";
+
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-black">
-      <div className="mx-auto max-w-7xl px-6 py-16">
-        <h2 className="text-3xl font-bold">
-          Ready to create momentum?
-        </h2>
+    <footer className="border-t border-white/10 py-16">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
 
-        <p className="mt-4 max-w-xl text-slate-400">
-          Let's explore how AI, automation, and modern technology can help
-          your organization work smarter and grow faster.
+        <Image
+          src="/logo.png"
+          alt="Novomentum"
+          width={180}
+          height={50}
+          className="h-auto w-40"
+        />
+
+        <p className="text-sm text-slate-500">
+          © {new Date().getFullYear()} Novomentum LLC
         </p>
 
-        <button className="mt-8 rounded-xl bg-cyan-500 px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-400">
-          Schedule a Strategy Session
-        </button>
-
-        <div className="mt-16 border-t border-white/10 pt-8 text-sm text-slate-500">
-          © {new Date().getFullYear()} Novomentum LLC • Nampa, Idaho
-        </div>
       </div>
     </footer>
   );
