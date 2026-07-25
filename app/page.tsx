@@ -1,39 +1,5 @@
-import NovomentumMethod from "@/components/sections/novomentum-method";
-import Navbar from "@/components/layout/navbar";
-import Hero from "@/components/hero/hero";
-import Stats from "@/components/sections/stats";
-import TrustedTech from "@/components/sections/trusted-tech";
-import BusinessGoals from "@/components/sections/business-goals";
-import WhyNovomentum from "@/components/sections/why-novomentum";
-import AIAssessment from "@/components/sections/ai-assessment";
-import CTA from "@/components/sections/cta";
-import Footer from "@/components/layout/footer";
-import MouseGlow from "@/components/ui/mouse-glow";
+import { redirect } from "next/navigation";
 
 export default function Home() {
-  return (
-    <main className="relative min-h-screen overflow-x-hidden bg-black text-white">
-      <MouseGlow />
-
-      <Navbar />
-
-      <Hero />
-
-      <Stats />
-
-      <NovomentumMethod />
-
-      <TrustedTech />
-
-      <BusinessGoals />
-
-      <WhyNovomentum />
-
-      <AIAssessment />
-
-      <CTA />
-
-      <Footer />
-    </main>
-  );
+  redirect("/launch");
 }
