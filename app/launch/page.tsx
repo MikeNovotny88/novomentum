@@ -9,7 +9,7 @@ import Particles from "@/components/effects/particles";
 import LaunchHero from "@/components/launch/hero";
 import Countdown from "@/components/launch/countdown";
 import NotifyForm from "@/components/launch/notify-form";
-import SocialLinks from "@/components/launch/social-links";
+
 
 export default function LaunchPage() {
   return (
@@ -109,8 +109,7 @@ export default function LaunchPage() {
 
           <NotifyForm />
 
-          <SocialLinks />
-
+          
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
