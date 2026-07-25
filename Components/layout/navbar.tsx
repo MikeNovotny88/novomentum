@@ -6,8 +6,8 @@ import Button from "@/components/ui/button";
 
 const links = [
   { name: "Solutions", href: "#solutions" },
-  { name: "AI Assessment", href: "#assessment" },
-  { name: "Why Us", href: "#why" },
+  { name: "About", href: "#about" },
+  { name: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
