@@ -2,43 +2,110 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Novomentum | AI That Creates Momentum",
+  metadataBase: new URL("https://novomentum.com"),
+
+  title: {
+    default: "Novomentum | Helping Businesses Modernize, Automate & Grow",
+    template: "%s | Novomentum",
+  },
+
   description:
-    "Helping businesses adopt AI, automate workflows, modernize Microsoft 365, and build intelligent technology solutions.",
+    "Novomentum helps businesses modernize Microsoft 365, automate workflows, implement practical AI, and build secure technology solutions that create measurable business momentum.",
+
+  applicationName: "Novomentum",
+
   keywords: [
     "AI Consulting",
     "Microsoft 365",
-    "Automation",
-    "Business Intelligence",
+    "Microsoft Copilot",
+    "Business Automation",
+    "Workflow Automation",
     "AI Agents",
-    "CRM",
-    "Copilot",
-    "Idaho AI",
+    "Artificial Intelligence",
+    "Cloud Consulting",
+    "SharePoint",
+    "Power Automate",
+    "Business Intelligence",
+    "CRM Integration",
     "Digital Transformation",
+    "Technology Consulting",
+    "Idaho IT Consulting",
   ],
-  authors: [{ name: "Novomentum LLC" }],
-  creator: "Novomentum",
-  publisher: "Novomentum",
-  metadataBase: new URL("https://novomentum.com"),
+
+  authors: [
+    {
+      name: "Novomentum LLC",
+      url: "https://novomentum.com",
+    },
+  ],
+
+  creator: "Novomentum LLC",
+  publisher: "Novomentum LLC",
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+
   openGraph: {
+    title: "Novomentum | Helping Businesses Modernize, Automate & Grow",
+    description:
+      "AI Strategy • Microsoft 365 • Automation • AI Agents • Business Technology Consulting",
+
+    url: "https://novomentum.com",
+
+    siteName: "Novomentum",
+
+    locale: "en_US",
+
+    type: "website",
+
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Novomentum",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
     title: "Novomentum",
     description:
-      "AI Strategy • Automation • Microsoft Solutions • Business Intelligence",
-    url: "https://novomentum.com",
-    siteName: "Novomentum",
-    locale: "en_US",
-    type: "website",
+      "Helping businesses modernize Microsoft 365, automate workflows, and implement practical AI.",
+
+    images: ["/og-image.png"],
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html
+      lang="en"
+      suppressHydrationWarning
+    >
+      <body className="bg-black text-white antialiased">
+        {children}
+      </body>
     </html>
   );
 }

@@ -1,82 +1,176 @@
-import type { Metadata } from "next";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
+import Container from "@/components/ui/container";
+import Section from "@/components/ui/section";
+import Card from "@/components/ui/card";
+import Badge from "@/components/ui/badge";
 import Button from "@/components/ui/button";
+import {
+  BrainCircuit,
+  Target,
+  TrendingUp,
+  CheckCircle2,
+} from "lucide-react";
 
-export const metadata: Metadata = {
-  title: "AI Strategy Consulting | Novomentum",
-  description:
-    "Develop a practical AI strategy that aligns with your business goals. Novomentum helps organizations identify opportunities, prioritize investments, and implement AI with confidence.",
-};
+const process = [
+  {
+    title: "Discover",
+    description:
+      "We learn your business, your technology, and your biggest operational challenges.",
+    icon: Target,
+  },
+  {
+    title: "Design",
+    description:
+      "Create an AI roadmap focused on measurable business outcomes.",
+    icon: BrainCircuit,
+  },
+  {
+    title: "Deploy",
+    description:
+      "Implement secure AI solutions with Microsoft 365 and OpenAI technologies.",
+    icon: TrendingUp,
+  },
+];
+
+const outcomes = [
+  "Reduce manual work",
+  "Increase employee productivity",
+  "Improve customer response times",
+  "Deploy Microsoft Copilot",
+  "Automate repetitive workflows",
+  "Build an AI roadmap",
+];
 
 export default function AIPage() {
   return (
     <>
       <Navbar />
 
-      <main className="bg-black text-white">
+      <main className="bg-black text-white pt-36">
 
-        <section className="mx-auto max-w-7xl px-6 pt-40 pb-24">
+        <Section>
 
-          <p className="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-400">
-            AI Strategy
-          </p>
+          <Container>
 
-          <h1 className="mt-6 max-w-4xl text-6xl font-black leading-tight">
-            Build an AI roadmap that delivers real business value.
-          </h1>
+            <Badge>
+              AI Strategy
+            </Badge>
 
-          <p className="mt-8 max-w-3xl text-xl leading-9 text-slate-400">
-            Artificial intelligence isn't about replacing people—it's about
-            empowering them. We help organizations identify practical
-            opportunities for AI, reduce manual work, and create measurable
-            business outcomes.
-          </p>
+            <div className="mt-8 max-w-4xl">
 
-          <div className="mt-12">
-            <Button href="/contact">
-              Schedule Strategy Session
-            </Button>
-          </div>
+              <h1 className="text-6xl font-black leading-tight">
+                Build an AI strategy that delivers measurable business value.
+              </h1>
 
-        </section>
+              <p className="mt-8 text-xl leading-9 text-slate-400">
+                AI isn&apos;t about replacing people. It&apos;s about empowering your
+                team, eliminating repetitive work, and creating a smarter,
+                faster organization.
+              </p>
 
-        <section className="mx-auto grid max-w-7xl gap-10 px-6 pb-32 md:grid-cols-3">
+            </div>
 
-          <div className="card p-10">
-            <h2 className="text-2xl font-bold">
-              Discovery
+          </Container>
+
+        </Section>
+
+        <Section>
+
+          <Container>
+
+            <h2 className="mb-12 text-4xl font-black">
+              Our Process
             </h2>
 
-            <p className="mt-6 leading-8 text-slate-400">
-              Understand your current technology, workflows, and business
-              objectives.
-            </p>
-          </div>
+            <div className="grid gap-8 md:grid-cols-3">
 
-          <div className="card p-10">
-            <h2 className="text-2xl font-bold">
-              Roadmap
-            </h2>
+              {process.map((step) => {
+                const Icon = step.icon;
 
-            <p className="mt-6 leading-8 text-slate-400">
-              Prioritize AI opportunities based on business value, complexity,
-              and return on investment.
-            </p>
-          </div>
+                return (
+                  <Card key={step.title}>
 
-          <div className="card p-10">
-            <h2 className="text-2xl font-bold">
-              Implementation
-            </h2>
+                    <div className="mb-6 inline-flex rounded-2xl bg-cyan-400/10 p-4">
+                      <Icon className="h-8 w-8 text-cyan-400" />
+                    </div>
 
-            <p className="mt-6 leading-8 text-slate-400">
-              Deploy solutions using Microsoft Copilot, OpenAI, automation,
-              and secure cloud technologies.
-            </p>
-          </div>
+                    <h3 className="text-2xl font-bold">
+                      {step.title}
+                    </h3>
 
-        </section>
+                    <p className="mt-5 leading-8 text-slate-400">
+                      {step.description}
+                    </p>
+
+                  </Card>
+                );
+              })}
+
+            </div>
+
+          </Container>
+
+        </Section>
+
+        <Section>
+
+          <Container>
+
+            <div className="grid gap-10 lg:grid-cols-2">
+
+              <div>
+
+                <h2 className="text-4xl font-black">
+                  Expected Outcomes
+                </h2>
+
+                <div className="mt-10 space-y-5">
+
+                  {outcomes.map((item) => (
+                    <div
+                      key={item}
+                      className="flex items-center gap-4"
+                    >
+                      <CheckCircle2 className="h-6 w-6 text-cyan-400" />
+
+                      <span className="text-lg">
+                        {item}
+                      </span>
+
+                    </div>
+                  ))}
+
+                </div>
+
+              </div>
+
+              <Card>
+
+                <h3 className="text-3xl font-black">
+                  Ready to create momentum?
+                </h3>
+
+                <p className="mt-6 leading-8 text-slate-400">
+                  Schedule a free strategy session and discover how practical AI
+                  can transform your business.
+                </p>
+
+                <div className="mt-10">
+
+                  <Button href="/contact">
+                    Book Free Strategy Call
+                  </Button>
+
+                </div>
+
+              </Card>
+
+            </div>
+
+          </Container>
+
+        </Section>
 
       </main>
 

@@ -7,75 +7,58 @@ import Float from "@/components/animations/float";
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden pt-32">
-      {/* Background Glow */}
-      <div className="absolute inset-0 -z-10">
+    <section className="relative isolate flex min-h-screen items-center overflow-hidden pt-28 lg:pt-36">
+      {/* Background */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+
         <motion.div
           animate={{
             scale: [1, 1.08, 1],
-            opacity: [0.5, 0.8, 0.5],
+            opacity: [0.35, 0.65, 0.35],
           }}
           transition={{
-            duration: 8,
+            duration: 10,
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute left-1/2 top-1/2 h-[900px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/10 blur-[180px]"
+          className="absolute left-1/2 top-1/2 h-[1400px] w-[1400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-400/10 blur-[260px]"
         />
+
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.06),transparent_60%)]" />
+
       </div>
 
-      <div className="mx-auto grid w-full max-w-7xl items-center gap-20 px-6 lg:grid-cols-2">
-        {/* Left Content */}
+      <div className="mx-auto flex w-full max-w-[1700px] flex-col items-center gap-20 px-6 lg:flex-row lg:justify-between lg:px-12">
+
+        {/* Left */}
         <motion.div
-          initial={{ opacity: 0, x: -40 }}
+          initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{
+            duration: 0.9,
+            ease: "easeOut",
+          }}
+          className="w-full lg:w-[48%]"
         >
           <HeroContent />
         </motion.div>
 
-        {/* Right Graphic */}
+        {/* Right */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-          className="hidden justify-center lg:flex"
+          transition={{
+            duration: 1,
+            ease: "easeOut",
+          }}
+          className="flex w-full justify-center lg:w-[52%]"
         >
           <Float>
             <HeroGraphic />
           </Float>
         </motion.div>
+
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{
-          delay: 1.5,
-          duration: 1,
-        }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
-      >
-        <div className="flex flex-col items-center">
-          <p className="text-xs uppercase tracking-[0.35em] text-slate-500">
-            Scroll
-          </p>
-
-          <motion.div
-            animate={{
-              y: [0, 10, 0],
-            }}
-            transition={{
-              repeat: Infinity,
-              duration: 1.8,
-            }}
-            className="mt-3 text-2xl text-cyan-400"
-          >
-            ↓
-          </motion.div>
-        </div>
-      </motion.div>
     </section>
   );
 }

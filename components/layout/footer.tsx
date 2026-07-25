@@ -32,7 +32,7 @@ export default function Footer() {
               </h2>
 
               <p className="mt-6 max-w-xl text-lg leading-8 text-slate-400">
-                Let's discuss how AI, Microsoft 365, automation,
+                Let&apos;s discuss how AI, Microsoft 365, automation,
                 and intelligent business systems can help your
                 organization work smarter and grow faster.
               </p>
@@ -41,7 +41,7 @@ export default function Footer() {
 
             <div className="flex justify-center lg:justify-end">
 
-              <Button href="#">
+              <Button href="/contact">
                 Schedule Strategy Session
               </Button>
 
@@ -54,16 +54,38 @@ export default function Footer() {
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-slate-500 md:flex-row">
 
           <p>
-            © {new Date().getFullYear()} Novomentum LLC
+            © {new Date().getFullYear()} Novomentum LLC. All rights reserved.
           </p>
 
-          <div className="flex gap-8">
+          <div className="flex flex-wrap items-center gap-8">
 
-            <a href="#solutions">Solutions</a>
+            <a
+              href="/solutions"
+              className="transition hover:text-cyan-400"
+            >
+              Solutions
+            </a>
 
-            <a href="#why">Why Novomentum</a>
+            <a
+              href="/about"
+              className="transition hover:text-cyan-400"
+            >
+              About
+            </a>
 
-            <a href="#contact">Contact</a>
+            <a
+              href="/tools/roi-calculator"
+              className="transition hover:text-cyan-400"
+            >
+              ROI Calculator
+            </a>
+
+            <a
+              href="/contact"
+              className="transition hover:text-cyan-400"
+            >
+              Contact
+            </a>
 
           </div>
 

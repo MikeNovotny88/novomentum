@@ -1,3 +1,4 @@
+import NovomentumMethod from "@/components/sections/novomentum-method";
 import Navbar from "@/components/layout/navbar";
 import Hero from "@/components/hero/hero";
 import Stats from "@/components/sections/stats";
@@ -19,6 +20,8 @@ export default function Home() {
       <Hero />
 
       <Stats />
+
+      <NovomentumMethod />
 
       <TrustedTech />
 

@@ -1,41 +1,81 @@
+import {
+  BrainCircuit,
+  Cloud,
+  ShieldCheck,
+  Database,
+  Bot,
+  Cpu,
+} from "lucide-react";
+
+import Reveal from "@/components/animations/reveal";
 import SectionTitle from "@/components/shared/section-title";
 
 const technologies = [
-  "Microsoft 365",
-  "Azure",
-  "Microsoft Copilot",
-  "OpenAI",
-  "HubSpot",
-  "Salesforce",
-  "Power Platform",
-  "SharePoint",
-  "Teams",
-  "Cloudflare",
+  {
+    name: "Microsoft 365",
+    icon: ShieldCheck,
+  },
+  {
+    name: "Microsoft Copilot",
+    icon: Bot,
+  },
+  {
+    name: "Azure",
+    icon: Cloud,
+  },
+  {
+    name: "OpenAI",
+    icon: BrainCircuit,
+  },
+  {
+    name: "Cloudflare",
+    icon: Cpu,
+  },
+  {
+    name: "Business Integrations",
+    icon: Database,
+  },
 ];
 
 export default function TrustedTech() {
   return (
-    <section className="py-32">
-      <div className="mx-auto max-w-7xl px-6">
+    <Reveal>
+      <section className="py-32">
 
-        <SectionTitle
-          eyebrow="Technology"
-          title="Powered by the platforms you already trust."
-          description="We build modern AI, automation, and business solutions using industry-leading technologies."
-        />
+        <div className="mx-auto max-w-7xl px-6">
 
-        <div className="flex flex-wrap justify-center gap-5">
-          {technologies.map((tech) => (
-            <div
-              key={tech}
-              className="rounded-full border border-white/10 bg-white/5 px-6 py-3 text-lg text-slate-300 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:bg-cyan-400/10 hover:text-white"
-            >
-              {tech}
-            </div>
-          ))}
+          <SectionTitle
+            eyebrow="Technology"
+            title="Powered by trusted platforms."
+            description="We build modern business solutions using enterprise technologies trusted around the world."
+          />
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+            {technologies.map((tech) => {
+              const Icon = tech.icon;
+
+              return (
+                <div
+                  key={tech.name}
+                  className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400 hover:shadow-[0_0_40px_rgba(34,211,238,.12)]"
+                >
+                  <div className="mb-6 inline-flex rounded-2xl bg-cyan-400/10 p-4">
+                    <Icon className="h-8 w-8 text-cyan-400" />
+                  </div>
+
+                  <h3 className="text-2xl font-bold">
+                    {tech.name}
+                  </h3>
+                </div>
+              );
+            })}
+
+          </div>
+
         </div>
 
-      </div>
-    </section>
+      </section>
+    </Reveal>
   );
 }
