@@ -1,51 +1,61 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import Button from "@/components/ui/button";
 
 const links = [
   { name: "Solutions", href: "#solutions" },
+  { name: "AI Assessment", href: "#assessment" },
   { name: "Why Us", href: "#why" },
-  { name: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
-  return (
-    <header className="fixed inset-x-0 top-6 z-50 px-6">
-      <div className="mx-auto flex max-w-7xl items-center justify-between rounded-2xl border border-white/10 bg-black/60 px-6 py-4 backdrop-blur-xl shadow-[0_10px_50px_rgba(0,0,0,.45)]">
+  const [scrolled, setScrolled] = useState(false);
 
-        {/* Logo */}
-        <a href="/" className="flex items-center">
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+
+    window.addEventListener("scroll", onScroll);
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <header className="fixed inset-x-0 top-5 z-50 px-6">
+      <div
+        className={`mx-auto flex max-w-7xl items-center justify-between rounded-2xl border transition-all duration-300 ${
+          scrolled
+            ? "border-white/10 bg-black/80 py-3 shadow-2xl backdrop-blur-xl"
+            : "border-white/5 bg-black/40 py-5 backdrop-blur-md"
+        } px-8`}
+      >
+        <a href="/">
           <Image
             src="/logot.png"
             alt="Novomentum"
             width={250}
-            height={60}
+            height={70}
+            className="h-14 w-auto"
             priority
-            className="h-16 w-auto"
           />
         </a>
 
-        {/* Navigation */}
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden gap-10 lg:flex">
           {links.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-slate-300 transition-colors duration-300 hover:text-cyan-400"
+              className="text-sm font-medium text-slate-300 transition hover:text-cyan-400"
             >
               {link.name}
             </a>
           ))}
         </nav>
 
-        {/* CTA */}
-        <a
-          href="#contact"
-          className="rounded-xl bg-cyan-400 px-6 py-3 font-semibold text-black transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(34,211,238,.45)]"
-        >
+        <Button href="#contact">
           Schedule Strategy Session
-        </a>
-
+        </Button>
       </div>
     </header>
   );
