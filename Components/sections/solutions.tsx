@@ -72,7 +72,7 @@ export default function Solutions() {
         {solutions.map(({ icon: Icon, title, description }) => (
           <div
             key={title}
-            className="group rounded-2xl border border-white/10 bg-white/5 p-8 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/40 hover:bg-white/10"
+            className="group rounded-2xl border border-cyan-500/20 bg-zinc-900/80 p-8 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/40 hover:bg-white/10"
           >
             <Icon className="mb-6 h-10 w-10 text-cyan-400 transition-transform group-hover:scale-110" />
 
